@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Adithyan KP | Voidbyte</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* --- 1. DESIGN SYSTEM --- */
+        :root {
+            --bg-color: #f3f4f6;       /* Light Grey Background */
+            --surface-color: #ffffff;   /* Pure White Cards */
+            --text-primary: #111827;    /* Almost Black */
+            --text-secondary: #6b7280;  /* Muted Grey */
+            --accent-color: #6366f1;    /* Vibrant Indigo/Violet */
+            --accent-hover: #4f46e5;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --radius: 24px;             /* Rounded corners for modern feel */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Plus Jakarta Sans', sans-serif; /* Modern Geometric Font */
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.2s; }
+        ul { list-style: none; }
+
+        /* --- 2. NAVIGATION (Floating Pill Style) --- */
+        header {
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav {
+            background: var(--surface-color);
+            padding: 1rem 2rem;
+            border-radius: 100px; /* Pill shape */
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.25rem;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: '';
+            display: block;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-color);
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .nav-links a:hover { color: var(--text-primary); }
+
+        .btn-contact {
+            background-color: var(--text-primary);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .btn-contact:hover { background-color: var(--accent-color); }
+
+        /* --- 3. MAIN LAYOUT (Bento Grid) --- */
+        main {
+            flex: 1;
+            padding: 2rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr; /* Left is 60%, Right is 40% */
+            gap: 1.5rem;
+            height: 100%;
+        }
+
+        /* Common Card Style */
+        .card {
+            background: var(--surface-color);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            padding: 2.5rem;
+            border: 1px solid rgba(0,0,0,0.02);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        /* LEFT SIDE: Hero / About */
+        .hero-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 550px;
+            position: relative;
+            overflow: hidden;
+            /* Subtle background accent */
+            background: linear-gradient(135deg, #ffffff 0%, #fefeff 100%);
+        }
+
+        /* Decorative circle in the corner */
+        .hero-card::after {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: var(--accent-color);
+            opacity: 0.1;
+            border-radius: 50%;
+            filter: blur(40px);
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .hero-content p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 450px;
+            line-height: 1.7;
+        }
+
+        .services-list {
+            display: flex;
+            gap: 1rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .chip {
+            background: #f3f4f6;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* RIGHT SIDE: Team Stack */
+        .team-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .stack-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 0.5rem;
+            margin-bottom: -0.5rem;
+        }
+
+        .stack-header h2 { font-size: 1.2rem; font-weight: 700; }
+        .stack-header span { font-size: 0.8rem; color: var(--accent-color); font-weight: 600; text-transform: uppercase; }
+
+        /* Individual Member Cards */
+        .member-card {
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            cursor: pointer;
+        }
+
+        .member-img {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px; /* Squircle shape */
+            background-color: #e5e7eb;
+            background-image: linear-gradient(45deg, #e5e7eb, #d1d5db);
+            flex-shrink: 0;
+        }
+
+        /* Giving each placeholder a slight color to make it pop */
+        .m1 { background-image: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 100%); }
+        .m2 { background-image: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%); }
+        .m3 { background-image: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%); }
+        .m4 { background-image: linear-gradient(135deg, #fccb90 0%, #d57eeb 100%); }
+
+        .member-details h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .member-details p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
+
+        .arrow-icon {
+            margin-left: auto;
+            color: #d1d5db;
+            font-size: 1.2rem;
+            transition: 0.2s;
+        }
+
+        .member-card:hover .arrow-icon {
+            color: var(--accent-color);
+            transform: translateX(5px);
+        }
+
+        /* --- 4. FOOTER --- */
+        footer {
+            margin-top: auto;
+            padding: 3rem 5%;
+            border-top: 1px solid #e5e7eb;
+            background: white;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-card {
+                min-height: auto;
+                padding-bottom: 4rem;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .nav-links { display: none; } /* Hide links on small screens for simplicity */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">voidbyte</div>
+            <div class="nav-links">
+                <a href="#">Work</a>
+                <a href="#">Agency</a>
+                <a href="#">Expertise</a>
+            </div>
+            <a href="#" class="btn-contact">Let's Talk</a>
+        </nav>
+    </header>
+
+    <!-- Main Layout -->
+    <main>
+        <div class="bento-grid">
+            
+            <!-- About Section -->
+            <section class="card hero-card">
+                <div class="hero-content">
+                    <h1>About Adithyan KP</h1>
+                    <p>
+                        Adithyan KP is a versatile Product Strategist and Backend Engineer at Voidbyte. 
+                        He combines strategic thinking with technical expertise to build robust 
+                        backend systems and drive product innovation.
+                    </p>
+                </div>
+
+                <div class="services-wrapper">
+                    <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #9ca3af; margin-bottom: 10px;">Role</p>
+                    <div class="services-list">
+                        <div class="chip">Product Strategist</div>
+                        <div class="chip">Backend Engineer</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Placeholder for additional content -->
+           
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Voidbyte Inc.</p>
+            <div style="display: flex; gap: 1.5rem;">
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
