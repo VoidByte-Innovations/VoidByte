@@ -6,17 +6,16 @@
     <title>About Aswanidev vs | Voidbyte</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
     <style>
-        /* --- 1. DESIGN SYSTEM --- */
         :root {
-            --bg-color: #f3f4f6;       /* Light Grey Background */
-            --surface-color: #ffffff;   /* Pure White Cards */
-            --text-primary: #111827;    /* Almost Black */
-            --text-secondary: #6b7280;  /* Muted Grey */
-            --accent-color: #6366f1;    /* Vibrant Indigo/Violet */
+            --bg-color: #f3f4f6;
+            --surface-color: #ffffff;
+            --text-primary: #111827;
+            --text-secondary: #6b7280;
+            --accent-color: #6366f1;
             --accent-hover: #4f46e5;
             --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
             --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-            --radius: 24px;             /* Rounded corners for modern feel */
+            --radius: 24px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -24,17 +23,14 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-primary);
-            font-family: 'Plus Jakarta Sans', sans-serif; /* Modern Geometric Font */
-            -webkit-font-smoothing: antialiased;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
 
-        a { text-decoration: none; color: inherit; transition: 0.2s; }
-        ul { list-style: none; }
+        a { text-decoration: none; color: inherit; }
 
-        /* --- 2. NAVIGATION (Floating Pill Style) --- */
         header {
             padding: 2rem 5%;
             display: flex;
@@ -44,7 +40,7 @@
         nav {
             background: var(--surface-color);
             padding: 1rem 2rem;
-            border-radius: 100px; /* Pill shape */
+            border-radius: 100px;
             box-shadow: var(--shadow-lg);
             display: flex;
             justify-content: space-between;
@@ -56,7 +52,6 @@
         .logo {
             font-weight: 800;
             font-size: 1.25rem;
-            letter-spacing: -0.5px;
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -64,7 +59,6 @@
 
         .logo::before {
             content: '';
-            display: block;
             width: 12px;
             height: 12px;
             background: var(--accent-color);
@@ -73,16 +67,13 @@
 
         .nav-links {
             display: flex;
-            gap: 2.5rem;
+            gap: 2rem;
         }
 
         .nav-links a {
-            font-weight: 500;
             font-size: 0.95rem;
             color: var(--text-secondary);
         }
-
-        .nav-links a:hover { color: var(--text-primary); }
 
         .btn-contact {
             background-color: var(--text-primary);
@@ -90,12 +81,8 @@
             padding: 0.6rem 1.5rem;
             border-radius: 100px;
             font-weight: 600;
-            font-size: 0.9rem;
         }
 
-        .btn-contact:hover { background-color: var(--accent-color); }
-
-        /* --- 3. MAIN LAYOUT (Bento Grid) --- */
         main {
             flex: 1;
             padding: 2rem 5%;
@@ -104,21 +91,12 @@
             width: 100%;
         }
 
-        .bento-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr; /* Left is 60%, Right is 40% */
-            gap: 1.5rem;
-            height: 100%;
-        }
-
-        /* Common Card Style */
         .card {
             background: var(--surface-color);
             border-radius: var(--radius);
             box-shadow: var(--shadow-sm);
             padding: 2.5rem;
-            border: 1px solid rgba(0,0,0,0.02);
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            transition: 0.3s;
         }
 
         .card:hover {
@@ -126,217 +104,118 @@
             transform: translateY(-2px);
         }
 
-        /* LEFT SIDE: Hero / About */
         .hero-card {
+            min-height: 550px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 550px;
-            position: relative;
-            overflow: hidden;
-            /* Subtle background accent */
-            background: linear-gradient(135deg, #ffffff 0%, #fefeff 100%);
-        }
-
-        /* Decorative circle in the corner */
-        .hero-card::after {
-            content: '';
-            position: absolute;
-            top: -50px;
-            right: -50px;
-            width: 200px;
-            height: 200px;
-            background: var(--accent-color);
-            opacity: 0.1;
-            border-radius: 50%;
-            filter: blur(40px);
         }
 
         .hero-content h1 {
-            font-size: 3.5rem;
-            line-height: 1.1;
-            letter-spacing: -1.5px;
+            font-size: 3rem;
             margin-bottom: 1.5rem;
-            color: var(--text-primary);
         }
 
         .hero-content p {
-            font-size: 1.125rem;
+            font-size: 1.05rem;
             color: var(--text-secondary);
-            max-width: 450px;
             line-height: 1.7;
+            margin-bottom: 1rem;
+            max-width: 600px;
         }
 
         .services-list {
             display: flex;
-            gap: 1rem;
-            margin-top: 3rem;
             flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 2rem;
         }
 
         .chip {
             background: #f3f4f6;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 0.9rem;
             border-radius: 8px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
-            color: var(--text-primary);
         }
 
-        /* RIGHT SIDE: Team Stack */
-        .team-stack {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .stack-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 0.5rem;
-            margin-bottom: -0.5rem;
-        }
-
-        .stack-header h2 { font-size: 1.2rem; font-weight: 700; }
-        .stack-header span { font-size: 0.8rem; color: var(--accent-color); font-weight: 600; text-transform: uppercase; }
-
-        /* Individual Member Cards */
-        .member-card {
-            padding: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1.25rem;
-            cursor: pointer;
-        }
-
-        .member-img {
-            width: 56px;
-            height: 56px;
-            border-radius: 16px; /* Squircle shape */
-            background-color: #e5e7eb;
-            background-image: linear-gradient(45deg, #e5e7eb, #d1d5db);
-            flex-shrink: 0;
-        }
-
-        /* Giving each placeholder a slight color to make it pop */
-        .m1 { background-image: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 100%); }
-        .m2 { background-image: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%); }
-        .m3 { background-image: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%); }
-        .m4 { background-image: linear-gradient(135deg, #fccb90 0%, #d57eeb 100%); }
-
-        .member-details h3 {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .member-details p {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-top: 2px;
-        }
-
-        .arrow-icon {
-            margin-left: auto;
-            color: #d1d5db;
-            font-size: 1.2rem;
-            transition: 0.2s;
-        }
-
-        .member-card:hover .arrow-icon {
-            color: var(--accent-color);
-            transform: translateX(5px);
-        }
-
-        /* --- 4. FOOTER --- */
         footer {
             margin-top: auto;
-            padding: 3rem 5%;
+            padding: 2rem 5%;
             border-top: 1px solid #e5e7eb;
             background: white;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--text-secondary);
+            text-align: center;
             font-size: 0.9rem;
+            color: var(--text-secondary);
         }
 
-        /* --- RESPONSIVE --- */
         @media (max-width: 900px) {
-            .bento-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero-card {
-                min-height: auto;
-                padding-bottom: 4rem;
-            }
             .hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
-            .nav-links { display: none; } /* Hide links on small screens for simplicity */
+            .nav-links {
+                display: none;
+            }
         }
     </style>
 </head>
+
 <body>
 
-    <!-- Header -->
-    <header>
-        <nav>
-            <div class="logo">voidbyte</div>
-            <div class="nav-links">
-                <a href="#">Work</a>
-                <a href="#">Agency</a>
-                <a href="#">Expertise</a>
-            </div>
-            <a href="#" class="btn-contact">Let's Talk</a>
-        </nav>
-    </header>
-
-    <!-- Main Layout -->
-    <main>
-        <div class="bento-grid">
-            
-            <!-- About Section -->
-            <section class="card hero-card">
-                <div class="hero-content">
-                    <h1>About Aswanidev vs</h1>
-                    <p>
-                        Aswanidev vs is a highly skilled Backend Engineer at Voidbyte with 6+ years of experience in developing robust server-side architectures. He specializes in creating scalable, high-performance backend systems using modern technologies and frameworks. Aswanidev has architected and implemented APIs that serve millions of requests daily, ensuring optimal performance, security, and maintainability.
-                    </p>
-                    <p>
-                        His expertise includes database design, microservices architecture, cloud deployment, and performance optimization. Aswanidev is passionate about clean code practices and enjoys mentoring junior developers while continuously exploring new technologies to improve system efficiency and reliability.
-                    </p>
-                </div>
-
-                <div class="services-wrapper">
-                    <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #9ca3af; margin-bottom: 10px;">Role & Skills</p>
-                    <div class="services-list">
-                        <div class="chip">Backend Engineer</div>
-                        <div class="chip">API Development</div>
-                       
-                </div>
-            </section>
-
+<header>
+    <nav>
+        <div class="logo">voidbyte</div>
+        <div class="nav-links">
+            <a href="#">Work</a>
+            <a href="#">Projects</a>
+            <a href="#">Skills</a>
         </div>
-    </main>
+        <a href="#" class="btn-contact">Contact</a>
+    </nav>
+</header>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 Voidbyte Inc.</p>
-            <div style="display: flex; gap: 1.5rem;">
-                <a href="#">Twitter</a>
-                <a href="#">LinkedIn</a>
-                <a href="#">Instagram</a>
+<main>
+    <section class="card hero-card">
+        <div class="hero-content">
+            <h1>About Me</h1>
+
+            <p>
+                I am a developer focused on building real-world applications and developer tools, with a strong interest in backend systems, local AI, and full-stack development. I primarily work with Go for backend development and Vue.js for creating modern, responsive user interfaces.
+            </p>
+
+            <p>
+                I am  building multiple projects including an offline AI chat application with TTS/STT support, a high-speed cross-platform file sharing system, and developer-focused tools. My work emphasizes performance, simplicity, and practical usability.
+            </p>
+
+            <p>
+                My technical focus includes API development, system design, local LLM integration, and building efficient applications. I am actively exploring offline AI systems, cross-platform development, and performance optimization.
+            </p>
+        </div>
+
+        <div>
+            <p style="font-size: 0.8rem; text-transform: uppercase; color: #9ca3af;">
+                Tech Stack & Skills
+            </p>
+
+            <div class="services-list">
+                <div class="chip">Go (Golang)</div>
+                <!-- <div class="chip">Vue.js</div> -->
+                <div class="chip">JavaScript</div>
+                <div class="chip">HTML & CSS</div>
+                <div class="chip">PHP (Basics)</div>
+                <!-- <div class="chip">REST API Development</div> -->
+                <div class="chip">Local LLM Integration</div>
+                <div class="chip">TTS / STT Systems</div>
+                <!-- <div class="chip">Full-Stack Development</div> -->
+                <!-- <div class="chip">System Design</div> -->
             </div>
         </div>
-    </footer>
+    </section>
+</main>
+
+<footer>
+    © 2026 Aswanidev vs • Built with simplicity and purpose
+</footer>
 
 </body>
 </html>
